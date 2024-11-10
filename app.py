@@ -9,6 +9,14 @@ app = Flask(__name__)
 with open('anemia_model.pkl', 'rb') as f:
     pipeline, model = pickle.load(f)
 
+# Define the feature names in the same order as they were used during training
+feature_names = [
+    'Age', 'Residence', 'Highest educational level', 'Wealth index',
+    'Births in last five years', 'Age of respondent at 1st birth',
+    'Hemoglobin level', 'Have mosquito net', 'marital status',
+    'Residing with partner', 'Had fever in last two weeks', 'Taking iron medication'
+]
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -31,8 +39,8 @@ def predict():
         'Taking iron medication': request.form['Taking iron medication']
     }
     
-    # Convert the input data to a DataFrame
-    input_df = pd.DataFrame([input_data])
+    # Convert the input data to a DataFrame with the correct feature names
+    input_df = pd.DataFrame([input_data], columns=feature_names)
 
     # Preprocess the input data
     processed_input = pipeline.transform(input_df)
