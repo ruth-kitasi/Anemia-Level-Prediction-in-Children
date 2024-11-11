@@ -1,62 +1,99 @@
+/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
 }
 
-.container {
-    max-width: 800px;
-    margin: 50px auto;
+/* Header with primary orange color */
+header {
+    background-color: #e6550d; /* Updated color */
+    color: white;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    text-align: center;
 }
 
 h1 {
+    font-size: 2em;
+}
+
+/* Navbar with orange highlights */
+nav {
+    background-color: #333;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.navbar {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.navbar li {
+    margin-right: 30px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.navbar a:hover {
+    color: #e6550d; /* Updated hover effect with orange color */
+    text-decoration: underline;
+}
+
+.main {
     text-align: center;
+}
+
+/* Result box with orange border */
+.result-box {
+    border: 2px solid #e6550d; /* Updated border color */
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+/* Primary button styling */
+.button-primary {
+    background-color: #e6550d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+    background-color: #cc4a0b; /* Slightly darker orange for hover */
+}
+
+/* Recommendation section */
+.recommendation {
+    margin-top: 20px;
     color: #333;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin: 10px 0 5px;
-    font-weight: bold;
-}
-
-input[type="text"], input[type="number"], select {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-h3 {
+/* Footer with orange highlights */
+footer {
     text-align: center;
-    color: green;
+    padding: 20px;
+    background-color: #333;
+    color: white;
     margin-top: 20px;
 }
 
-img {
-    display: block;
-    max-width: 100%;
-    margin: 20px auto;
+footer a {
+    color: #e6550d; /* Footer links with orange color */
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #cc4a0b; /* Darker shade on hover */
 }

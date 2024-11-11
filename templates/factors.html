@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Factors Affecting Anemia</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Factors Affecting Anemia</h1>
+    </header>
+    <nav>
+        <ul class="navbar">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('general_info') }}">General Info</a></li>
+            <li><a href="{{ url_for('factors') }}">Factors Affecting Anemia</a></li>
+            <li><a href="{{ url_for('predict') }}">Predict Anemia Level</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Key Factors Contributing to Anemia in Children</h2>
+            <ul>
+                <li><strong>Dietary Iron Intake:</strong> Insufficient intake of iron-rich foods can lead to iron deficiency anemia. Children require a balanced diet that includes iron-rich foods like lean meats, beans, and fortified cereals.</li>
+                <li><strong>Chronic Diseases:</strong> Conditions such as malaria, HIV/AIDS, and other chronic infections can affect red blood cell production and lifespan, leading to anemia.</li>
+                <li><strong>Poor Nutrient Absorption:</strong> Disorders like celiac disease or intestinal parasites can interfere with the body's ability to absorb nutrients, including iron, leading to anemia.</li>
+                <li><strong>Genetic Disorders:</strong> Diseases like sickle cell anemia or thalassemia are inherited and can cause chronic anemia due to abnormal red blood cell production.</li>
+                <li><strong>Frequent Infections:</strong> Recurrent infections can cause inflammation and reduce the body's ability to use iron effectively, contributing to anemia.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Anemia Level Prediction</p>
+    </footer>
+</body>
+</html>

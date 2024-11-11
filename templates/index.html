@@ -2,90 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Anemia Prediction</title>
+    <title>Home - Anemia Prediction</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Anemia Level Prediction</h1>
-        <img src="{{ url_for('static', filename='images/anemic_child.jpg') }}" alt="Anemia">
-        <form action="/predict" method="post">
-            <label for="Age">Age:</label>
-            <input type="text" name="Age" required><br>
-
-            <label for="Residence">Residence:</label>
-            <select name="Residence" required>
-                <option value="Rural">Rural</option>
-                <option value="Urban">Urban</option>
-            </select><br>
-
-            <label for="Highest educational level">Highest Educational Level:</label>
-            <select name="Highest educational level" required>
-                <option value="No education">No education</option>
-                <option value="Primary">Primary</option>
-                <option value="Secondary">Secondary</option>
-                <option value="Higher">Higher</option>
-            </select><br>
-
-            <label for="Wealth index">Wealth Index:</label>
-            <select name="Wealth index" required>
-                <option value="Poorest">Poorest</option>
-                <option value="Poorer">Poorer</option>
-                <option value="Middle">Middle</option>
-                <option value="Richer">Richer</option>
-                <option value="Richest">Richest</option>
-            </select><br>
-
-            <label for="Births in last five years">Births in Last Five Years:</label>
-            <input type="number" name="Births in last five years" required><br>
-
-            <label for="Age of respondent at 1st birth">Age of Respondent at 1st Birth:</label>
-            <input type="number" name="Age of respondent at 1st birth" required><br>
-
-            <label for="Hemoglobin level">Hemoglobin Level:</label>
-            <input type="number" step="0.1" name="Hemoglobin level" required><br>
-
-            <label for="Have mosquito net">Have Mosquito Net:</label>
-            <select name="Have mosquito net" required>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select><br>
-
-            <label for="marital status">Marital Status:</label>
-            <select name="marital status" required>
-                <option value="Married">Married</option>
-                <option value="Living with partner">Living with partner</option>
-                <option value="Never in union">Never in union</option>
-                <option value="Widowed">Widowed</option>
-                <option value="No longer living together/separated">No longer living together/separated</option>
-                <option value="Divorced">Divorced</option>
-            </select><br>
-
-            <label for="Residing with partner">Residing with Partner:</label>
-            <select name="Residing with partner" required>
-                <option value="Living with her">Living with her</option>
-                <option value="Staying elsewhere">Staying elsewhere</option>
-            </select><br>
-
-            <label for="Had fever in last two weeks">Had Fever in Last Two Weeks:</label>
-            <select name="Had fever in last two weeks" required>
-                <option value="No">No</option>
-                <option value="Yes">Yes</option>
-            </select><br>
-
-            <label for="Taking iron medication">Taking Iron Medication:</label>
-            <select name="Taking iron medication" required>
-                <option value="No">No</option>
-                <option value="Yes">Yes</option>
-            </select><br>
-
-            <button type="submit">Predict Anemia Level</button>
-        </form>
-
-        {% if prediction_text %}
-            <h3>{{ prediction_text }}</h3>
-        {% endif %}
+    <h1>Welcome to the Anemia Prediction App</h1>
+    <nav>
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/general_info">General Info</a></li>
+            <li><a href="/factors">Factors Affecting Anemia</a></li>
+            <li><a href="/predict">Predict Anemia Level</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <p>This application helps predict anemia levels in children based on various factors.</p>
     </div>
 </body>
 </html>
-

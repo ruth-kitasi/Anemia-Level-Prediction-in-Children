@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anemia General Information</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>General Information About Anemia</h1>
+    </header>
+    <nav>
+        <ul class="navbar">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('general_info') }}">General Info</a></li>
+            <li><a href="{{ url_for('factors') }}">Factors Affecting Anemia</a></li>
+            <li><a href="{{ url_for('predict') }}">Predict Anemia Level</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Understanding Anemia in Children</h2>
+            <p>Anemia, a condition characterized by a deficiency of red blood cells or hemoglobin, is particularly concerning in children due to its significant impact on their growth and development. It often results from inadequate iron intake, poor absorption, or chronic diseases, leading to symptoms such as fatigue, weakness, and pallor. In children, anemia can hinder cognitive and physical development, impairing their academic performance and overall well-being. Iron deficiency anemia is the most prevalent type among children, making nutritional interventions critical. Ensuring a diet rich in iron, alongside proper medical evaluation and treatment, is essential to address this condition effectively. Early detection and management of anemia in children are vital to prevent long-term developmental issues and improve their quality of life.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Anemia Level Prediction</p>
+    </footer>
+</body>
+</html>
