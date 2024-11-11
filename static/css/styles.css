@@ -5,10 +5,13 @@
     box-sizing: border-box;
 }
 
-/* ------------- Body Styling ------------- */
+/* ------------- Body Styling with Background Image and Transparency ------------- */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+        url('/static/images/background.jpg') no-repeat center center fixed;
+    background-size: cover; /* Cover entire screen */
     color: #333; /* Default text color (black) */
     line-height: 1.6;
     display: flex; /* Flexbox for layout */
@@ -16,9 +19,12 @@ body {
     min-height: 100vh; /* Ensure the body takes up full screen height */
 }
 
-/* ------------- Header Styling ------------- */
+/* ------------- Header with Image Background and Transparency ------------- */
 header {
-    background-color: #ff8c00; /* Orange header */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        url('/static/images/anemic_child.jpg') no-repeat center;
+    background-size: cover;
     color: white;
     padding: 30px 10px;
     text-align: center;
@@ -28,12 +34,15 @@ header {
 h1 {
     font-size: 2.5em;
     margin-top: 50px;
-    color: #ff8c00; /* Orange text for the main title */
+    color: white; /* White text for main title over image */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Text shadow for readability */
 }
+
+
 
 /* ------------- Navbar Styling ------------- */
 nav {
-    background-color: #ff8c00; /* Orange navbar */
+    background-color: rgba(255, 140, 0, 0.9); /* Transparent orange navbar */
     padding: 10px 0;
     text-align: center;
 }
