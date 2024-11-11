@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anemia Level Prediction Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Anemia Level Prediction Results</h1>
+    </header>
+    
+    <!-- Horizontal Navigation Bar -->
+    <nav>
+        <ul class="navbar">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('general_info') }}">General Info</a></li>
+            <li><a href="{{ url_for('factors') }}">Factors Affecting Anemia</a></li>
+            <li><a href="{{ url_for('predict') }}">Predict Anemia Level</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <div class="prediction-result">
+            <h2>Your Predicted Anemia Level</h2>
+            <p><strong>Predicted Anemia Severity:</strong></p>
+            <div class="result-box">
+                <p>{{ prediction_text }}</p>
+            </div>
+            
+            <div class="recommendation">
+                <h3>Recommendations:</h3>
+                {% if prediction_text == 'No Anemia' %}
+                    <p>You're in good health! Keep up the healthy lifestyle and balanced diet.</p>
+                {% elif prediction_text == 'Mild Anemia' %}
+                    <p>Consider adding more iron-rich foods to your diet, such as leafy greens, red meat, and legumes.</p>
+                {% elif prediction_text == 'Moderate Anemia' %}
+                    <p>It’s recommended to consult a healthcare provider for potential iron supplementation or further evaluation.</p>
+                {% elif prediction_text == 'Severe Anemia' %}
+                    <p>Seek immediate medical attention. Severe anemia requires prompt medical care and possible blood tests or treatment.</p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Anemia Level Prediction</p>
+    </footer>
+</body>
+</html>

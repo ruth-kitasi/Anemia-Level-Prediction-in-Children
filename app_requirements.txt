@@ -1,0 +1,7 @@
+flask
+gunicorn 
+flask-cors
+
+# you can use pip install
+
+
