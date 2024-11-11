@@ -1,99 +1,126 @@
-/* styles.css */
-
-body {
-    font-family: Arial, sans-serif;
+/* ------------- Reset & Basic Styling ------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header with primary orange color */
+/* ------------- Body Styling ------------- */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333; /* Default text color (black) */
+    line-height: 1.6;
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+    min-height: 100vh; /* Ensure the body takes up full screen height */
+}
+
+/* ------------- Header Styling ------------- */
 header {
-    background-color: #e6550d; /* Updated color */
+    background-color: #ff8c00; /* Orange header */
     color: white;
-    padding: 20px;
+    padding: 30px 10px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.5em;
+    margin-top: 50px;
+    color: #ff8c00; /* Orange text for the main title */
 }
 
-/* Navbar with orange highlights */
+/* ------------- Navbar Styling ------------- */
 nav {
-    background-color: #333;
-    padding: 10px;
-    margin-bottom: 20px;
+    background-color: #ff8c00; /* Orange navbar */
+    padding: 10px 0;
+    text-align: center;
 }
 
 .navbar {
     list-style-type: none;
     padding: 0;
-    display: flex;
-    justify-content: center;
     margin: 0;
 }
 
 .navbar li {
-    margin-right: 30px;
+    display: inline;
+    margin: 0 20px;
 }
 
-.navbar a {
-    color: white;
+.navbar li a {
     text-decoration: none;
+    color: white; /* White text in navbar */
     font-size: 1.2em;
-}
-
-.navbar a:hover {
-    color: #e6550d; /* Updated hover effect with orange color */
-    text-decoration: underline;
-}
-
-.main {
-    text-align: center;
-}
-
-/* Result box with orange border */
-.result-box {
-    border: 2px solid #e6550d; /* Updated border color */
-    background-color: #f9f9f9;
-    padding: 15px;
-    margin-top: 10px;
-}
-
-/* Primary button styling */
-.button-primary {
-    background-color: #e6550d;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
+    padding: 8px 16px;
     border-radius: 5px;
-    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.button-primary:hover {
-    background-color: #cc4a0b; /* Slightly darker orange for hover */
+.navbar li a:hover {
+    background-color: #e67e22; /* Darker orange for hover */
 }
 
-/* Recommendation section */
-.recommendation {
-    margin-top: 20px;
-    color: #333;
+/* ------------- Main Content Styling ------------- */
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px 0;
 }
 
-/* Footer with orange highlights */
+h2 {
+    font-size: 1.8em;
+    margin: 20px 0;
+    color: #ff8c00; /* Orange text for sub-headings */
+}
+
+p {
+    margin: 15px 0;
+    font-size: 1.3em;
+    color: #333; /* Black text for paragraphs */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+}
+
+/* ------------- Footer Styling ------------- */
 footer {
     text-align: center;
     padding: 20px;
     background-color: #333;
     color: white;
-    margin-top: 20px;
+    width: 100%;
+    margin-top: auto; /* Pushes the footer to the bottom */
 }
 
 footer a {
-    color: #e6550d; /* Footer links with orange color */
+    color: #ff8c00; /* Orange text for links in the footer */
     text-decoration: none;
 }
 
 footer a:hover {
-    color: #cc4a0b; /* Darker shade on hover */
+    color: #e67e22; /* Darker orange for footer links */
+    text-decoration: underline;
+}
+
+/* ------------- Button Styling ------------- */
+.button-primary {
+    display: inline-block;
+    background-color: #ff8c00;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.button-primary:hover {
+    background-color: #e67e22; /* Darker orange on hover */
 }
