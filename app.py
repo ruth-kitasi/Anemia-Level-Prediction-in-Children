@@ -9,6 +9,33 @@ app = Flask(__name__)
 with open('anemia_model.pkl', 'rb') as f:
     pipeline, model = pickle.load(f)
 
+def convert_age_to_group(age):
+    if 15 <= age <= 19:
+        return '15-19'
+    elif 20 <= age <= 24:
+        return '20-24'
+    elif 25 <= age <= 29:
+        return '25-29'
+    elif 30 <= age <= 34:
+        return '30-34'
+    elif 35 <= age <= 39:
+        return '35-39'
+    elif 40 <= age <= 44:
+        return '40-44'
+    elif 45 <= age <= 49:
+        return '45-49'
+    else:
+        return 'unknown'
+    
+def get_recommendation(anemia_level):
+    recommendations = {
+        0: "Maintain a balanced diet rich in iron, vitamin B12, and folic acid. Consider regular checkups if you're at risk.",
+        1: "Increase iron-rich foods like spinach, red meat, and lentils. Consider iron supplements if needed, after consulting a healthcare provider.",
+        2: "Increase iron intake, and consult a healthcare provider to discuss possible iron or vitamin supplementation.",
+        3: "Seek immediate medical consultation to identify the underlying cause and discuss treatment options like supplements or other interventions."
+    }
+    return recommendations.get(anemia_level, "No specific recommendation available.")
+
 # Route for the home page
 @app.route('/')
 def home():
@@ -34,7 +61,7 @@ def predict():
 def make_prediction():
     # Map user input to the feature order in the DataFrame
     input_data = {
-        'Age': request.form['Age'],
+        'Age':  convert_age_to_group(int(request.form['Age'])),
         'Residence': request.form['Residence'],
         'Highest educational level': request.form['Highest educational level'],
         'Wealth index': request.form['Wealth index'],
@@ -71,19 +98,11 @@ def make_prediction():
     # Get the mapped prediction text
     prediction_text = prediction_map.get(prediction_value, 'Unknown')
 
-    # Tailored recommendations based on anemia level
-    recommendations = {
-        0: "No Anemia detected. Maintain a balanced diet and regular check-ups.",
-        1: "Mild anemia detected. Consider increasing iron-rich foods in your diet.",
-        2: "Moderate anemia detected. Consult with a healthcare professional for iron supplementation.",
-        3: "Severe anemia detected. Immediate medical attention required. Follow the advice of your healthcare provider."
-    }
-
-    # Get the recommendation based on predicted anemia level
-    recommendation_text = recommendations.get(prediction_value, "No recommendation available.")
+    # Get the tailored recommendation based on the anemia level
+    recommendation_text = get_recommendation(prediction_value)
 
     # Render the results page with the prediction and recommendations
     return render_template('result.html', prediction_text=f'Predicted Anemia Level: {prediction_text}', recommendation_text=recommendation_text)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
