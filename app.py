@@ -101,6 +101,10 @@ def make_prediction():
     # Get the tailored recommendation based on the anemia level
     recommendation_text = get_recommendation(prediction_value)
 
+    # Print statements for debugging
+    print("Prediction Text:", prediction_text)
+    print("Recommendation Text:", recommendation_text)
+
     # Render the results page with the prediction and recommendations
     return render_template('result.html', prediction_text=f'Predicted Anemia Level: {prediction_text}', recommendation_text=recommendation_text)
 
