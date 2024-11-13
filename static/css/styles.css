@@ -9,7 +9,7 @@
 body {
     font-family: 'Arial', sans-serif;
     background: 
-        linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+        linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), 
         url('/static/images/background.jpg') no-repeat center center fixed;
     background-size: cover; /* Cover entire screen */
     color: #333; /* Default text color (black) */
@@ -38,11 +38,9 @@ h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Text shadow for readability */
 }
 
-
-
 /* ------------- Navbar Styling ------------- */
 nav {
-    background-color: rgba(255, 140, 0, 0.9); /* Transparent orange navbar */
+    background-color: rgba(204, 102, 0, 0.9); /* Darker transparent orange navbar */
     padding: 10px 0;
     text-align: center;
 }
@@ -68,7 +66,7 @@ nav {
 }
 
 .navbar li a:hover {
-    background-color: #e67e22; /* Darker orange for hover */
+    background-color: #cc8400; /* Darker orange for hover */
 }
 
 /* ------------- Main Content Styling ------------- */
@@ -82,7 +80,8 @@ main {
 h2 {
     font-size: 1.8em;
     margin: 20px 0;
-    color: #ff8c00; /* Orange text for sub-headings */
+    color: #800000; /* Dark red for sub-headings */
+    text-align: center;
 }
 
 p {
@@ -109,19 +108,19 @@ footer {
 }
 
 footer a {
-    color: #ff8c00; /* Orange text for links in the footer */
+    color: #cc8400; /* Darker orange text for links in the footer */
     text-decoration: none;
 }
 
 footer a:hover {
-    color: #e67e22; /* Darker orange for footer links */
+    color: #b36b00; /* Even darker orange for footer links */
     text-decoration: underline;
 }
 
 /* ------------- Button Styling ------------- */
 .button-primary {
     display: inline-block;
-    background-color: #ff8c00;
+    background-color: #cc8400;
     color: white;
     padding: 12px 25px;
     border-radius: 5px;
@@ -131,5 +130,5 @@ footer a:hover {
 }
 
 .button-primary:hover {
-    background-color: #e67e22; /* Darker orange on hover */
+    background-color: #b36b00; /* Even darker orange on hover */
 }
