@@ -40,7 +40,7 @@ h1 {
 
 /* ------------- Navbar Styling ------------- */
 nav {
-    background-color: rgba(204, 102, 0, 0.9); /* Darker transparent orange navbar */
+    background-color: rgba(204, 112, 0, 0.9); /* Darker orange navbar */
     padding: 10px 0;
     text-align: center;
 }
@@ -66,7 +66,7 @@ nav {
 }
 
 .navbar li a:hover {
-    background-color: #cc8400; /* Darker orange for hover */
+    background-color: #b35300; /* Darker orange for hover */
 }
 
 /* ------------- Main Content Styling ------------- */
@@ -80,21 +80,56 @@ main {
 h2 {
     font-size: 1.8em;
     margin: 20px 0;
-    color: #800000; /* Dark red for sub-headings */
+    color: #ff8c00; /* Orange text for sub-headings */
     text-align: center;
 }
 
-p {
-    margin: 15px 0;
-    font-size: 1.3em;
-    color: #333; /* Black text for paragraphs */
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+h3 {
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: #cc7000; /* Darker orange text for smaller sub-headings */
+    text-align: left;
+    padding-left: 20px; /* Align with the boxes */
+}
+
+.result-box, .recommendation, .external-links {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    line-height: 1.6;
+    padding: 20px;
+    margin: 15px 0;
+}
+
+.result-box {
+    max-width: 800px;
+    margin: 0 auto; /* Center the result box */
+    padding: 20px;
+    text-align: center;
+}
+
+.recommendation, .external-links {
+    max-width: 760px; /* Align with the result box */
+    margin: 15px auto 0 auto; /* Center these boxes and add space from previous box */
+    padding: 20px;
+}
+
+.external-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.external-links li {
+    margin: 10px 0;
+}
+
+.external-links a {
+    color: #cc7000; /* Darker orange for links */
+    text-decoration: none;
+}
+
+.external-links a:hover {
+    text-decoration: underline;
 }
 
 /* ------------- Footer Styling ------------- */
@@ -108,19 +143,19 @@ footer {
 }
 
 footer a {
-    color: #cc8400; /* Darker orange text for links in the footer */
+    color: #ff8c00; /* Orange text for links in the footer */
     text-decoration: none;
 }
 
 footer a:hover {
-    color: #b36b00; /* Even darker orange for footer links */
+    color: #b35300; /* Darker orange for footer links */
     text-decoration: underline;
 }
 
 /* ------------- Button Styling ------------- */
 .button-primary {
     display: inline-block;
-    background-color: #cc8400;
+    background-color: #cc7000; /* Darker orange */
     color: white;
     padding: 12px 25px;
     border-radius: 5px;
@@ -130,5 +165,5 @@ footer a:hover {
 }
 
 .button-primary:hover {
-    background-color: #b36b00; /* Even darker orange on hover */
+    background-color: #b35300; /* Darker orange on hover */
 }

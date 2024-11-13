@@ -22,27 +22,31 @@
     
     <main>
         <div class="prediction-result">
-            <h2>Your Predicted Anemia Level</h2>
-            <p><strong>Predicted Anemia Severity:</strong></p>
+            <h2>Results</h2>
+       
             <div class="result-box">
-                <p>{{ prediction_text }}</p>
+                <p>{{ prediction_text or "Prediction not available" }}</p>
             </div>
-            
+    
             <div class="recommendation">
                 <h3>Recommendations:</h3>
-                {% if prediction_text == 'No Anemia' %}
-                    <p>You're in good health! Keep up the healthy lifestyle and balanced diet.</p>
-                {% elif prediction_text == 'Mild Anemia' %}
-                    <p>Consider adding more iron-rich foods to your diet, such as leafy greens, red meat, and legumes.</p>
-                {% elif prediction_text == 'Moderate Anemia' %}
-                    <p>It’s recommended to consult a healthcare provider for potential iron supplementation or further evaluation.</p>
-                {% elif prediction_text == 'Severe Anemia' %}
-                    <p>Seek immediate medical attention. Severe anemia requires prompt medical care and possible blood tests or treatment.</p>
-                {% endif %}
+                <div class="result-box">
+                    <p>{{ recommendation_text or "No recommendation available" }}</p> 
+                </div>
+            </div>
+
+            <div class="external-links">
+                <h3>Additional Info:</h3>
+                <div class="result-box">
+                    <ul>
+                        <li><a href="https://www.who.int/news-room/fact-sheets/detail/anaemia#:~:text=Anaemia%2- Anemia WHO" target="_blank">Anemia - WHO</a></li>
+                        <li><a href="https://www.nationwidechildrens.org/conditions/health-library/iron-deficiency-anemia-in-children" target="_blank">Iron-Deficiency Anemia in Children - Nationwide Children's Hospital</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </main>
-
+    
     <footer>
         <p>&copy; 2024 Anemia Level Prediction</p>
     </footer>
