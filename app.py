@@ -38,7 +38,7 @@ def get_recommendation(anemia_level):
 
 # Load the pickled encoder, pipeline, and model
 
-with open('anemia_model_v2.pkl', 'rb') as f:
+with open('anemia_model.pkl', 'rb') as f:
     encoder,pipeline, model = pickle.load(f)
 
 
