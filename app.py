@@ -5,9 +5,6 @@ import pandas as pd
 
 app = Flask(__name__)
 
-# Load the pickled pipeline and model
-with open('anemia_model.pkl', 'rb') as f:
-    pipeline, model = pickle.load(f)
 
 def convert_age_to_group(age):
     if 15 <= age <= 19:
@@ -29,12 +26,21 @@ def convert_age_to_group(age):
     
 def get_recommendation(anemia_level):
     recommendations = {
-        0: "Maintain a balanced diet rich in iron, vitamin B12, and folic acid. Consider regular checkups if you're at risk.",
-        1: "Increase iron-rich foods like spinach, red meat, and lentils. Consider iron supplements if needed, after consulting a healthcare provider.",
-        2: "Increase iron intake, and consult a healthcare provider to discuss possible iron or vitamin supplementation.",
-        3: "Seek immediate medical consultation to identify the underlying cause and discuss treatment options like supplements or other interventions."
+        "No Anemia": "Maintain a balanced diet rich in iron, vitamin B12, and folic acid. Consider regular checkups if you're at risk.",
+        "Mild Anemia": "Increase iron-rich foods like spinach, red meat, and lentils. Consider iron supplements if needed, after consulting a healthcare provider.",
+        "Moderate Anemia": "Increase iron intake, and consult a healthcare provider to discuss possible iron or vitamin supplementation.",
+        "Severe Anemia": "Seek immediate medical consultation to identify the underlying cause and discuss treatment options like supplements or other interventions.",
+        
     }
     return recommendations.get(anemia_level, "No specific recommendation available.")
+
+
+
+# Load the pickled encoder, pipeline, and model
+
+with open('anemia_model_v2.pkl', 'rb') as f:
+    encoder,pipeline, model = pickle.load(f)
+
 
 # Route for the home page
 @app.route('/')
@@ -61,19 +67,21 @@ def predict():
 def make_prediction():
     # Map user input to the feature order in the DataFrame
     input_data = {
-        'Age':  convert_age_to_group(int(request.form['Age'])),
-        'Residence': request.form['Residence'],
-        'Highest educational level': request.form['Highest educational level'],
-        'Wealth index': request.form['Wealth index'],
-        'Births in last five years': request.form['Births in last five years'],
-        'Age of respondent at 1st birth': request.form['Age of respondent at 1st birth'],
-        'Hemoglobin level': request.form['Hemoglobin level'],
-        'Have mosquito net': request.form['Have mosquito net'],
-        'marital status': request.form['marital status'],
-        'Residing with partner': request.form['Residing with partner'],
-        'Had fever in last two weeks': request.form['Had fever in last two weeks'],
-        'Taking iron medication': request.form['Taking iron medication']
+        'Births_last_5y': request.form['Births in last five years'],
+        'Age_first_birth': request.form['Age of respondent at 1st birth'],
+        'Hemoglobin_level': request.form['Hemoglobin level'],
+        'Age_group':  convert_age_to_group(int(request.form['Age'])),
+        'Area_Type': request.form['Residence'],
+        'Education_level': request.form['Highest educational level'],
+        'Wealth': request.form['Wealth index'],
+        'Mosquito_net': request.form['Have mosquito net'],
+        'Marital_status': request.form['marital status'],
+        'Living_with_spouse': request.form['Residing with partner'],
+        'Had_fever': request.form['Had fever in last two weeks'],
+        'Taking_meds': request.form['Taking iron medication']
     }
+
+
 
     # Convert the input data to a DataFrame
     input_df = pd.DataFrame([input_data])
@@ -84,29 +92,29 @@ def make_prediction():
     # Make prediction
     prediction = model.predict(processed_input)
 
-    # Ensure the prediction is an integer between 0 and 3
-    prediction_value = int(prediction[0]) if isinstance(prediction[0], (int, np.int64)) else 0
-
-    # Map the prediction output to a human-readable string
+    # Convert prediction to string
+    prediction_text = list(prediction)[0] 
+     # Map the prediction output to a human-readable string
     prediction_map = {
-        0: 'No Anemia',
-        1: 'Mild Anemia',
-        2: 'Moderate Anemia',
-        3: 'Severe Anemia'
+        "Not anemic": 'No Anemia',
+        "Mild": 'Mild Anemia',
+        "Moderate": 'Moderate Anemia',
+        "Severe": 'Severe Anemia'
     }
 
     # Get the mapped prediction text
-    prediction_text = prediction_map.get(prediction_value, 'Unknown')
+    prediction_text = prediction_map.get(prediction_text)
 
     # Get the tailored recommendation based on the anemia level
-    recommendation_text = get_recommendation(prediction_value)
+    recommendation_text = get_recommendation(prediction_text)
 
     # Print statements for debugging
-    print("Prediction Text:", prediction_text)
-    print("Recommendation Text:", recommendation_text)
+    #print("Prediction Text:", prediction_text)
+    #print("Recommendation Text:", recommendation_text)
 
     # Render the results page with the prediction and recommendations
     return render_template('result.html', prediction_text=f'Predicted Anemia Level: {prediction_text}', recommendation_text=recommendation_text)
 
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
+
