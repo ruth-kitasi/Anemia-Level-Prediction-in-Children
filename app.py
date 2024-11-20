@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import pickle
 import numpy as np
 import pandas as pd
+import os
 
 app = Flask(__name__)
 
@@ -116,5 +117,6 @@ def make_prediction():
     return render_template('result.html', prediction_text=f'Predicted Anemia Level: {prediction_text}', recommendation_text=recommendation_text)
 
 if __name__ == "__main__":
-    app.run()
-
+    port = os.getenv('PORT', 5000)  # Default to 5000 if no port is set
+    app.run(debug=True, host='0.0.0.0', port=port)
+   
