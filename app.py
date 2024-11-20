@@ -120,3 +120,6 @@ if __name__ == "__main__":
     port = os.getenv('PORT', 5000)  # Default to 5000 if no port is set
     app.run(debug=True, host='0.0.0.0', port=port)
    
+"""if __name__ == "__main__":
+    #port = os.getenv('PORT', 5000)  # Default to 5000 if no port is set
+    app.run(debug=True)"""

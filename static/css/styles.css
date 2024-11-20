@@ -11,15 +11,15 @@ body {
     background: 
         linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), 
         url('/static/images/background.jpg') no-repeat center center fixed;
-    background-size: cover; /* Cover entire screen */
-    color: #333; /* Default text color (black) */
+    background-size: cover;
+    color: #333;
     line-height: 1.6;
-    display: flex; /* Flexbox for layout */
-    flex-direction: column; /* Stack elements vertically */
-    min-height: 100vh; /* Ensure the body takes up full screen height */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* ------------- Header with Image Background and Transparency ------------- */
+/* ------------- Header Styling ------------- */
 header {
     background: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
@@ -29,44 +29,56 @@ header {
     padding: 30px 10px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* ------------- Header Image Sequence Animation ------------- */
+    /*animation: headerImageSequence 15s infinite; /* Image cycling animation */  
 }
 
 h1 {
     font-size: 2.5em;
     margin-top: 50px;
-    color: white; /* White text for main title over image */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Text shadow for readability */
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
+
+/* ------------- Header Image Sequence ------------- */
+/* @keyframes headerImageSequence {
+    0% { background-image: url('/static/images/anemic_child.jpg'); }
+    33% { background-image: url('/static/images/1.jpg'); }
+    66% { background-image: url('/static/images/2.jpg'); }
+    100% { background-image: url('/static/images/3.jpg'); }
+}
+    */
 
 /* ------------- Navbar Styling ------------- */
 nav {
-    background-color: rgba(204, 112, 0, 0.9); /* Darker orange navbar */
+    background-color: rgba(204, 112, 0, 0.9); /* Dark orange navbar background */
     padding: 10px 0;
     text-align: center;
 }
 
 .navbar {
-    list-style-type: none;
+    list-style-type: none; /* Removes bullet points from list */
     padding: 0;
     margin: 0;
 }
 
 .navbar li {
-    display: inline;
+    display: inline; /* Inline items for navbar */
     margin: 0 20px;
 }
 
 .navbar li a {
-    text-decoration: none;
-    color: white; /* White text in navbar */
+    text-decoration: none; /* Removes underlines from links */
+    color: white; /* White text for links */
     font-size: 1.2em;
     padding: 8px 16px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
 }
 
 .navbar li a:hover {
-    background-color: #b35300; /* Darker orange for hover */
+    background-color: #b35300; /* Darker orange on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
 }
 
 /* ------------- Main Content Styling ------------- */
@@ -77,25 +89,33 @@ main {
     padding: 20px 0;
 }
 
+/* ------------- Section Box Styling with Hover Zoom Effect ------------- */
 .section-box {
     background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
     padding: 20px;
     margin: 15px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth zoom on hover */
+}
+
+.section-box:hover {
+    transform: scale(1.05); /* Slight enlargement on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
 .section-box h2, .section-box h3 {
     font-size: 1.8em;
     margin: 20px 0;
-    color: #ff8c00; /* Orange text for sub-headings */
+    color: #ff8c00; /* Orange headings */
     text-align: center;
     background-color: #ffffff;
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for better appearance */
 }
 
+/* ------------- Section Box Paragraph Styling ------------- */
 .section-box p {
     font-size: 1.1em;
     color: #333;
@@ -104,30 +124,32 @@ main {
     padding: 10px;
     background-color: #f9f9f9;
     border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
+/* ------------- Section Box Link Styling ------------- */
 .section-box a {
-    color: #cc7000; /* Darker orange for links */
+    color: #cc7000;
     text-decoration: none;
 }
 
 .section-box a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover */
 }
+
 /* ------------- Form Styling ------------- */
 form {
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
     padding: 20px;
     margin: 15px 0;
-    max-width: 1200px; /* Adjust width for more space */
+    max-width: 1200px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid layout */
-    gap: 20px; /* Space between form fields */
-    align-items: center; /* Center items vertically */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    align-items: center;
 }
 
 form label {
@@ -145,59 +167,52 @@ form select {
     border-radius: 5px;
 }
 
-/* ------------- Center the button ------------- */
+/* ------------- Submit Button Styling ------------- */
 form button[type="submit"] {
-    display: block; /* Ensures the button is a block-level element */
-    background-color: #cc7000; /* Darker orange */
+    display: block;
+    background-color: #cc7000;
     color: white;
     padding: 12px 25px;
     border-radius: 5px;
-    text-decoration: none;
     font-size: 1.1em;
     text-align: center;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    grid-column: 1 / -1; /* Makes the submit button span across the entire form */
-    margin-top: 20px; /* Adds space above the button */
-    justify-self: center; /* Center the button horizontally */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    grid-column: 1 / -1;
+    margin-top: 20px;
+    justify-self: center;
 }
 
 form button[type="submit"]:hover {
-    background-color: #b35300; /* Darker orange on hover */
+    background-color: #b35300;
+    transform: scale(1.05); /* Slight zoom on hover */
 }
-
-/* ------------- Label and Input Alignment ------------- */
-form label, form select, form input[type="text"], form input[type="number"] {
-    display: inline-block;
-}
-
-
 
 /* ------------- Footer Styling ------------- */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
+    background-color: #333; /* Dark background for footer */
     color: white;
     width: 100%;
-    margin-top: auto; /* Pushes the footer to the bottom */
+    margin-top: auto;
 }
 
 footer a {
-    color: #ff8c00; /* Orange text for links in the footer */
+    color: #ff8c00;
     text-decoration: none;
 }
 
 footer a:hover {
-    color: #b35300; /* Darker orange for footer links */
-    text-decoration: underline;
+    color: #b35300;
+    text-decoration: underline; /* Underline links on hover */
 }
 
-/* ------------- Button Styling ------------- */
+/* ------------- Primary Button Styling ------------- */
 .button-primary {
     display: inline-block;
-    background-color: #cc7000; /* Darker orange */
+    background-color: #cc7000;
     color: white;
     padding: 12px 25px;
     border-radius: 5px;
@@ -207,36 +222,36 @@ footer a:hover {
 }
 
 .button-primary:hover {
-    background-color: #b35300; /* Darker orange on hover */
+    background-color: #b35300;
 }
 
-
-
-
-
-/* Styles for boxed headings with orange color */
+/* Boxed Headings with Orange Color ------------- */
 .box-container {
-    background-color: #f9f3e0; /* Light beige background for the heading box */
-    border: 2px solid #e8b87c; /* Light orange border */
-    padding: 10px 15px;        /* Padding inside the box */
-    margin-bottom: 20px;       /* Space below the box */
-    border-radius: 8px;        /* Rounded corners */
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #f9f3e0;
+    border: 2px solid #e8b87c;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles for the heading texts within the box */
 .box-container h2, .box-container h3 {
-    color: #e67e22;            /* Orange color for heading text */
-    margin: 0;                 /* Remove default margins */
-    font-weight: bold;         /* Make headings bold */
+    color: #e67e22; /* Orange color for headings */
+    margin: 0;
+    font-weight: bold;
 }
 
-/* Section-box for the prediction, recommendation, and links */
-.section-box {
-    background-color: #fafafa; /* Light background for result boxes */
-    border: 1px solid #ddd;    /* Light gray border */
-    padding: 20px;             /* Padding inside the box */
-    margin-bottom: 20px;       /* Space below each section */
-    border-radius: 6px;        /* Rounded corners */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+/* ------------- Responsive Enhancements ------------- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em; /* Reduce font size for smaller screens */
+    }
+
+    nav {
+        font-size: 1em; /* Smaller font size for navbar */
+    }
+
+    form {
+        grid-template-columns: 1fr; /* Single column layout for small screens */
+    }
 }
