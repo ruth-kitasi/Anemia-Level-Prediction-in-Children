@@ -17,19 +17,76 @@
         <ul class="navbar">
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('general_info') }}">General Info</a></li>
-            <li><a href="{{ url_for('factors') }}">Factors Affecting Anemia</a></li>
+            <li><a href="{{ url_for('factors') }}">Statistics</a></li>
             <li><a href="{{ url_for('predict') }}">Predict Anemia Level</a></li>
         </ul>
     </nav>
 
     <!-- Main Content -->
     <main>
+        <!-- Dataset Description -->
         <div class="section-box">
-            <h2>Socioeconomic Factors</h2>
-            <p>Socioeconomic status plays a significant role in the prevalence of anemia. Poverty, lack of access to healthcare, and poor nutrition are major contributing factors. In many low- and middle-income countries, limited resources and access to nutritious food can lead to iron deficiency and other nutritional deficits that cause anemia.</p>
+            <h2>Dataset Overview</h2>
+            <p>This analysis leverages data from the 2018 Nigeria Demographic and Health Survey (NDHS), which provides important insights into the prevalence and factors affecting anemia. Key details include:</p>
+            <ul>
+                <li><strong>Geographic Scope:</strong> Covers all 36 states of Nigeria and the Federal Capital Territory (FCT).</li>
+                <li><strong>Target Population:</strong> 
+                    <ul>
+                        <li>Children aged 0-59 months.</li>
+                        <li>Mothers aged 15-49 years.</li>
+                    </ul>
+                </li>
+                <li><strong>Below are some key insights:</strong></li>
+            </ul>
         </div>
-        
-        
+
+        <!-- EDA Insights -->
+        <!-- Insight 1 -->
+        <div class="section-box">
+            <h2>Distribution of the Mother's Age at First Birth</h2>
+            <img src="{{ url_for('static', filename='images/Distribution-Age at first birth.png') }}" alt="Anemia level vs Age group" class="eda-image">
+            <p>The distribution is skewed to the right, indicating that the majority of respondents had their first child at a younger age, particularly between 15 and 25 years. This distribution suggests that early childbearing is more prevalent in this dataset, while fewer respondents experience first-time childbirth later in life.</p>
+        </div>
+
+
+        <!-- EDA Insight 2 -->
+        <div class="section-box">
+            <h2>Distribution of the children's Hemoglobin level</h2>
+            <img src="{{ url_for('static', filename='images/Distribution- Hemoglobin level.png') }}" alt="Anemia level vs Area type" class="eda-image">
+            <p>The distribution is approximately bell-shaped and symmetrical, with most hemoglobin levels concentrated between 95 and 125 g/dL. The distribution has a narrow spread, with relatively few respondents having hemoglobin levels below 75 or above 150. This shape implies that hemoglobin levels are normally distributed among the respondents after adjusting for altitude.</p>
+        </div>
+
+        <!-- EDA Insight 3 -->
+        <div class="section-box">
+            <h2>Relationship between Anemia level and parent's Age Group</h2>
+            <img src="{{ url_for('static', filename='images/anemia-level_vs_age-group.png') }}" alt="Anemia level vs Age group" class="eda-image">
+            <p>Children of mothers in the 20-39 age range show higher counts of moderate anemia compared to children of mothers in other age groups, with the peak in the 25-29 and 30-34 age groups. This trend may indicate that maternal age influences children's anemia levels, potentially due to factors associated with the health, nutritional status, or socioeconomic conditions of mothers in these age ranges.</p>
+        </div>
+
+        <!-- EDA Insight 4 -->
+        <div class="section-box">
+            <h2>Relationship between Anemia level and Area Type</h2>
+            <img src="{{ url_for('static', filename='images/anemia-level_vs_area-type.png') }}" alt="Anemia level vs Area type" class="eda-image">
+            <p>In rural areas majority of children fall under the "Moderate" anemia level, with the count significantly higher than other categories while in Urban areas, the counts are more balanced across the anemia levels compared to rural areas, but "Moderate" anemia is still common.This distribution suggests that moderate anemia is more prevalent in rural areas than in urban areas.his could indicate potential socio-economic or healthcare access disparities between rural and urban settings that influence anemia severity.</p>
+        </div>
+
+        <!-- EDA Insight 5 -->
+        <div class="section-box">
+            <h2>Relationship between Anemia level and parent's level of Education</h2>
+            <img src="{{ url_for('static', filename='images/anemia-level_vs_education-level.png') }}" alt="Anemia level vs Education level" class="eda-image">
+            <p>The analysis shows a clear relationship between education level and anemia severity. Chilren whose parents have no education have the highest prevalence of moderate anemia, suggesting that lack of education is associated with poorer anemia outcomes. In contrast,chilren whose parents have higher education have the fewest cases of moderate and severe anemia, indicating that education may play a protective role against anemia. This could be due to greater health awareness, better nutrition, and access to healthcare among educated individuals.</p>
+        </div>
+
+        <!-- EDA Insight 6 -->
+        <div class="section-box">
+            <h2>Relationship between Anemia level, Education level and Area Type</h2>
+            <img src="{{ url_for('static', filename='images/Anemia level, Education level and Area_type.png') }}" alt="Anemia level vs Education level vs Area type" class="eda-image">
+            <p>Education and Anemia: Individuals with higher education levels (Secondary and Higher) tend to have a lower prevalence of anemia, while those with lower education levels (No education and Primary) have a higher prevalence of anemia, especially in the mild and moderate categories.
+
+                Area of Residence and Anemia: There doesn't seem to be a significant difference in anemia prevalence between urban and rural areas within the same educational level.
+                
+                Education and Area: The combination of education and area of residence might influence anemia risk. For example, individuals with low education in rural areas might be at higher risk of anemia compared to those in urban areas with higher education.</p>
+        </div>
     </main>
 
     <!-- Footer -->

@@ -116,10 +116,10 @@ def make_prediction():
     # Render the results page with the prediction and recommendations
     return render_template('result.html', prediction_text=f'Predicted Anemia Level: {prediction_text}', recommendation_text=recommendation_text)
 
-if __name__ == "__main__":
+"""if __name__ == "__main__":
     port = os.getenv('PORT', 5000)  # Default to 5000 if no port is set
     app.run(debug=True, host='0.0.0.0', port=port)
-   
-"""if __name__ == "__main__":
+   """
+if __name__ == "__main__":
     #port = os.getenv('PORT', 5000)  # Default to 5000 if no port is set
-    app.run(debug=True)"""
+    app.run(debug=True)
