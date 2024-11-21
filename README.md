@@ -4,11 +4,10 @@
 
 ## 1.0 BUSINESS UNDERSTANDING
 ### Overview
-Anemia is a significant health issue, especially among Nigerian children under the age of five This condition hampers their growth, cognitive development, and immune health, driven primarily by poor nutrition, frequent infections, and limited healthcare access.
-Socioeconomic factors, such as low household income, limited education, and lack of proper sanitation, further contribute to its high prevalence. Tackling anemia is essential, not only to improve children’s health outcomes but also for Nigeria's broader national development, given the long-term impacts on physical and cognitive well-being.
+Anemia is a major health issue among children aged 0-59 months in Nigeria, impairing growth, cognition, and immunity. It is driven by poor nutrition, frequent infections, and limited healthcare access, with socioeconomic factors like low income, limited education, and poor sanitation worsening its prevalence.
+Addressing anemia is vital for improving child health and supporting Nigeria's development.
 
 ## Problem Statement
-![problem_statment](https://github.com/user-attachments/assets/c999d5a6-4bb1-4f40-a26c-070fd37035e8)
 
 Many children in Nigeria suffer from undetected and
 untreated anemia due to limited healthcare access, high
@@ -27,15 +26,23 @@ health interventions..
 3. Evaluate the model’s predictive accuracy for effective Public Health Use
 
 4. Provide Actionable Insights for Targeted Interventions
+
 5. Support Long-Term Policy Development for Anemia Reduction
+
+
+
+## Industry Domain
+Healthcare and Public health.
 
 ## Model Implementation
 - Logistic Regression
 - Decision Trees.
 - Random Forest
 - KNN
+
 ## Evaluation
 The project's success was measured through:
+
 - Accuracy
 - Precision
 - Recall
@@ -59,6 +66,11 @@ The project's success was measured through:
 
 4. A user-friendly web application was developed as the project’s end-user interface. This application allows users to input data, leveraging the pickled model to make predictions and offer tailored recommendations.
 
+## Deployment:
+We developed our anemia-level prediction application
+using Flask a lightweight and powerful web framework,and successfully deployed it on Render,ensuring a seamless and accessible user experience
+
+![modelpic](https://github.com/user-attachments/assets/e4e041c4-c9ed-4a86-8361-4f2616d2199d)
 
 ## Author and Acknowledgement:
 Special thanks to our Moringa School Data Science Technical Mentors for their guidance throughout the project. We would also like to acknowledge the contributions our gorup members.
