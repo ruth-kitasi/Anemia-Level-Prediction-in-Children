@@ -72,15 +72,7 @@ using Flask a lightweight and powerful web framework,and successfully deployed i
 
 ![modelpic](https://github.com/user-attachments/assets/e4e041c4-c9ed-4a86-8361-4f2616d2199d)
 
-## Author and Acknowledgement:
-Special thanks to our Moringa School Data Science Technical Mentors for their guidance throughout the project. We would also like to acknowledge the contributions our gorup members.
 
-- 1.Ruth Kitasi
-- 2.Agatha Nyambati
-- 3.Joseline Apiyo
-- 4.Cecilia Ngunjiri
-- 5.John Mbego
-- 6.Leonard Koyio
 
 
 
